@@ -5,26 +5,40 @@ import java.util.Scanner;
 public class StudentApp {
 
     public static void main(String[] args) {
-        String[] student1 = getDetails();
-        String[] student2 = getDetails(); ///sfghworjngh90wnergiopwjne0gjwe
-        String[] student3 = getDetails();
-    }
-    public static String[] getDetails(){
-
         Scanner sc = new Scanner(System.in);
-        //prompt for details of student
-        String[] details = new String[3];//three spaces needed
 
-        System.out.println("Enter your student name: ");
-        String studentName = sc.nextLine();
+        Student s1 = new Student();//default to create object
+        System.out.println("name: ");
+        s1.setName(sc.nextLine());
+        System.out.println("email: ");
+        s1.setEmail(sc.nextLine());
+        System.out.println("course: ");
+        s1.setCourse(sc.nextLine());
 
-        System.out.println("Please enter your student email: ");
+        //instance 2
+        System.out.println("name: ");
+        Student s2 = new Student(sc.nextLine());
+        System.out.println("email: ");
+        s1.setEmail(sc.nextLine());
+        System.out.println("course: ");
+        s1.setCourse(sc.nextLine());
+
+        //instance 3
+        System.out.println("name: ");
+        String name = sc.nextLine();
+        System.out.println("email: ");
         String email = sc.nextLine();
-
-        System.out.println("Please enter your course: ");
+        System.out.println("course: ");
         String course = sc.nextLine();
-        return details;
+        Student s3 = new Student(name, email, course);
+
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+
     }
+
+
 }
 
 
